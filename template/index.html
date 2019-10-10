@@ -1,0 +1,940 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+<link rel="icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<title>Find Tutor</title>
+</head>
+<!-- Header End -->
+
+<!-- Body Start -->
+<body>
+<!--Pre loader start-->
+<div id="preloader">
+  <div id="status"> 
+  	<p>Loading</p>
+  </div>
+</div>
+<!--pre loader end--> 
+<!--slider start-->
+<div class="lms_slider">
+  <div class="lms_revslider" >
+    <ul>
+       <!-- SLIDE 1 -->
+       <li data-transition="random-premium" data-slotamount="5" data-masterspeed="700" > 
+        <!-- MAIN IMAGE --> 
+        <img src="{% static 'user/images/slider/slider1.jpg' %}"   alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        <div class="lms_slider_overlay"></div>
+        
+        <!-- LAYERS -->
+        <div class="tp-caption mediumlarge_light_white_center customin customout start"
+						data-x="240"
+						data-hoffset="0"
+						data-y="150"
+						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="500"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Find a tutor in your area </div>
+        
+        <!-- LAYER NR. 1 -->
+        <div class="tp-caption main_txt customin customout start"
+						data-x="670"
+						data-hoffset="0"
+						data-y="150"
+
+						data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:2;scaleY:2;skewX:2;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="700"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">today!</div>
+        
+        <!-- LAYER NR. 2 -->
+        <div class="tp-caption simple_txt customin customout start"
+						data-x="center"
+						data-hoffset="0"
+						data-y="200"
+
+						data-customin="x:-50;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="900"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">FindTutor.com is a faster, easier way to find local and online tutoring services.</div>
+        
+        <!-- LAYER NR. 3 -->
+        <!-- <div class="tp-caption customin customout start"
+						data-x="center"
+						data-hoffset="0"
+						data-y="300"
+							
+						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:180;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="1100"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <a href="about.html" class="btn btn-default">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://themeforest.net/user/kamleshyadav/portfolio" target="_blank" class="btn btn-default">Buy Now</a> </div>
+         -->
+        <!-- LAYER NR. 4 -->
+        <div class="tp-caption first_image_bg customin customout start"
+						data-x="center"
+						data-hoffset="0"
+						data-y="bottom"
+							
+						data-customin="x:0;y:290;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2000"
+						data-start="1300"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image1_bg.png' %}" alt="" /> </div>
+        
+        <!-- LAYER NR. 5 -->
+        <div class="tp-caption first_image customin customout start"
+						data-x="center"
+						data-hoffset="0"
+						data-y="bottom"
+							
+						data-customin="x:0;y:-50;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2000"
+						data-start="2000"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image1.jpg' %}" alt="" /> </div>
+        
+        <!-- LAYER NR. 6 -->
+        <div class="tp-caption second_image_bg customin customout start"
+						data-x="0"
+						data-hoffset="0"
+						data-y="bottom"
+							
+						data-customin="x:-100;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2000"
+						data-start="2000"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image2_bg.png' %}" alt="" /> </div>
+        
+        <!-- LAYER NR. 7 -->
+        <div class="tp-caption second_image customin customout start"
+						data-x="0"
+						data-hoffset="0"
+						data-y="bottom"
+							
+						data-customin="x:-100;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="500"
+						data-start="3500"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image2.jpg' %}" alt="" /> </div>
+        
+        <!-- LAYER NR. 8 -->
+        <div class="tp-caption second_image_bg customin customout start"
+						data-x="right"
+						data-hoffset="0"
+						data-y="bottom"
+							
+						data-customin="x:100;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2000"
+						data-start="2000"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image2_bg.png' %}" alt="" /> </div>
+        
+        <!-- LAYER NR. 9 -->
+        <div class="tp-caption second_image customin customout start"
+						data-x="right"
+						data-hoffset=""
+						data-y="bottom"
+							
+						data-customin="x:100;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="500"
+						data-start="3500"
+						data-easing="Back.easeInOut"
+						data-endspeed="300"> <img src="{% static 'user/images/slider/revolution/image3.jpg' %}" alt="" /> </div>
+       </li>
+       
+       
+       <!-- SLIDE 2 -->
+       <li data-transition="random-premium" data-slotamount="5" data-masterspeed="700" > 
+        <!-- MAIN IMAGE --> 
+        <img src="{% static 'user/images/slider/slider2.jpg' %}"   alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        <div class="lms_slider_overlay"></div>
+        <!-- LAYERS --> 
+        <!-- LAYER 0 -->
+        <div class="tp-caption mediumlarge_light_white_center customin customout start"
+						data-x="center"
+						data-hoffset="0"
+						data-y="150"
+
+						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="500"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Services we have serve our clients</div>
+        
+        <!-- LAYER NR. 1 -->
+        <div class="caption lfr "
+               data-autoplay="false"
+               data-autoplayonlyfirsttime="false"
+               data-thumbimage=""
+               data-nextslideatend="false"
+               data-x="right"
+               data-hoffset="-5"
+               data-y="center"
+               data-speed="500"
+               data-start="800"
+               data-easing="easeOutBack">
+          <iframe src="http://player.vimeo.com/video/11784148?byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="281"></iframe>
+        </div>
+        
+        <!-- LAYER NR. 2 -->
+        <div class="tp-caption medium_bg_asbestos sfl"
+						data-x="0"
+						data-y="250"
+						data-speed="500"
+						data-start="1200"
+						data-easing="Back.easeOut"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">Learn anything online</div>
+        
+        <!-- LAYER NR. 3 -->
+        <div class="tp-caption medium_bg_asbestos skewfromleft"
+						data-x="0"
+						data-y="300"
+						data-speed="800"
+						data-start="1900"
+						data-easing="Elastic.easeOut"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">Choose subject category wise </div>
+        
+        <!-- LAYER NR. 4 -->
+        <!-- <div class="tp-caption medium_bg_asbestos skewfromleft"
+						data-x="0"
+						data-y="350"
+						data-speed="800"
+						data-start="2600"
+						data-easing="Power3.easeInOut"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">1000 - above online courses are available</div>
+         -->
+        <!-- LAYER NR. 5 -->
+        <!-- <div class="tp-caption medium_bg_asbestos skewfromleft"
+						data-x="0"
+						data-y="400"
+						data-speed="800"
+						data-start="3300"
+						data-easing="Power4.easeOut"
+
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">We have above 1000 experience faculty</div>
+         -->
+        <!-- LAYER NR. 12 -->
+        <!-- <div class="tp-caption medium_bg_asbestos skewfromleft"
+						data-x="0"
+						data-y="450"
+						data-speed="800"
+						data-start="3700"
+						data-easing="Expo.easeIn"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">Discussion with online talented students</div> -->
+      </li>
+      
+      
+      <!-- SLIDE 3 -->
+      <li data-transition="random-premium" data-slotamount="5" data-masterspeed="700" > 
+        <!-- MAIN IMAGE --> 
+        <img src="{% static 'user/images/slider/slider3.jpg' %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        <div class="lms_slider_overlay"></div>
+        <!-- LAYERS NR. 1 -->
+        <div class="tp-caption large_bold_white customin customout start"
+						data-x="right"
+						data-hoffset=""
+						data-y="150"
+						data-voffset=""
+
+						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1000"
+						data-start="500"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Fully Responsive</div>
+        <!-- LAYER NR. 2 -->
+        <!-- <div class="tp-caption sfl customout"
+						data-x="left"
+						data-y="center"
+						data-customout="x:-150;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1200"
+						data-start="600"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="on"
+						style="z-index: 6"> <img src="{% static 'user/images/slider/revolution/laptop.png' %}" alt="slider laptop" /> </div> -->
+        <!-- LAYER NR. 3 -->
+        <!-- <div class="tp-caption sfl customout"
+						data-x="left"
+						data-y="center"
+                        data-voffset="80"
+						data-customout="x:-150;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:0% 0%;"
+						data-speed="1000"
+						data-start="1300"
+						data-easing="Power4.easeOut"
+						data-endspeed="500"
+						data-endeasing="Power2.easeIn"
+						data-captionhidden="on"
+						style="z-index: 6"> <img src="{% static 'user/images/slider/revolution/i-pad.png' %}" alt="slider i-pad" /> </div>
+         -->
+        <!-- LAYER NR. 4 -->
+        <!-- <div class="tp-caption lfl customin customout"
+						data-x="left"
+						data-y="center"
+                        data-hoffset="480"
+                        data-voffset="80"
+						data-customin="x:-550;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="1500"
+						data-start="1800"
+						data-easing="Power4.easeOut"
+						data-endspeed="500"
+						data-endeasing="Power2.easeIn"
+						style="z-index: 6"> <img src="{% static 'user/images/slider/revolution/i-phone.png' %}" alt="slider i-phone" /> </div>
+         -->
+        <!-- LAYERS NR. 5 -->
+        <div class="tp-caption customin customout third_layer_service"
+						data-x="right"
+						data-hoffset=""
+						data-y="250"
+						data-voffset=""
+
+						data-customin="x:0;y:0;z:0;rotationX:180;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2000"
+						data-start="800"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Fully Responsive</div>
+        
+        <!-- LAYERS NR. 6 -->
+        <div class="tp-caption customin customout third_layer_service"
+						data-x="right"
+						data-hoffset=""
+						data-y="330"
+						data-voffset=""
+
+						data-customin="x:0;y:0;z:0;rotationX:180;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+
+						data-speed="2200"
+						data-start="900"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Mobile Optimized</div>
+        
+        <!-- LAYERS NR. 7 -->
+        <div class="tp-caption customin customout third_layer_service"
+						data-x="right"
+						data-hoffset=""
+						data-y="410"
+						data-voffset=""
+
+						data-customin="x:0;y:0;z:0;rotationX:180;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2400"
+						data-start="1000"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">HTML Content variation</div>
+        
+        <!-- LAYERS NR. 8 -->
+        <div class="tp-caption customin customout third_layer_service"
+						data-x="right"
+						data-hoffset=""
+						data-y="490"
+						data-voffset=""
+
+						data-customin="x:0;y:0;z:0;rotationX:180;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+						data-speed="2600"
+						data-start="1100"
+						data-easing="Back.easeInOut"
+						data-endspeed="300">Ultimated Translation</div>
+      </li>
+      
+      
+    </ul>
+    <div class="tp-bannertimer"></div>
+  </div>
+</div>
+<!--slider end--> 
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+<div class="container"> 
+  
+  <!--Our Best Services start-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Our Best Services</h2>
+        </div>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services1.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Learn Anything Online</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services2.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Talk to Our Experts</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+  </div>
+    
+  <div class="row">  
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services3.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Communicate with People</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services4.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Fully Responsive</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+   </div>
+   
+   <div class="row"> 
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services5.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Download all Course </h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_service_1">
+        <div class="lms_service_icon"><img src="{% static 'user/images/services/services6.png' %}" alt="service icon"/></div>
+        <a href="services.html">
+        <h3 class="lms_service_title">Multi Media Units</h3>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris. In ut egestas orci. Nullam vel laoreet dui. Sed est quam, blandit quis sapien sed, </p>
+      </div>
+    </div>
+  </div>
+  <!--Our Best Services end--> 
+  
+  <!--Our Popular Courses start-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Our Popular Courses</h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_popular_courses">
+        <div id="lms_popular_courses_slider" class="owl-carousel owl-theme">
+          <div class="lms_popular_courses_slider_item">
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_1.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"> <a id="1" class="lms_image_link"></a> </div>
+              </div>
+              <h3>Multimedia</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_2.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"> <a id="2" class="lms_image_link"></a> </div>
+              </div>
+              <h3>Information Technology</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="lms_popular_courses_slider_item">
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_3.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"><a id="3" class="lms_image_link"></a></div>
+              </div>
+              <h3>Design</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_4.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"><a id="4" class="lms_image_link"></a></div>
+              </div>
+              <h3>Beauty & Health Care</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="lms_popular_courses_slider_item">
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_1.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"><a id="5" class="lms_image_link"></a></div>
+              </div>
+              <h3>Multimedia</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="lms_popular_courses_item">
+              <div class="lms_hover_section"> <img src="{% static 'user/images/courses/courses_small_2.jpg' %}" alt="" />
+                <div class="lms_hover_overlay"><a id="6" class="lms_image_link"></a></div>
+              </div>
+              <h3>Information Technology</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+        </div>
+        <div class="customNavigation"> <a class="lms_prev_next prev"><i class="fa fa-angle-left"></i></a> <a class="lms_prev_next next"><i class="fa fa-angle-right"></i></a> <a class="lms_prev_next">+</a> </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail1"> <img src="{% static 'user/images/courses/courses_big_1.jpg' %}" alt="" />
+        <h3>Multimedia</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail2"> <img src="{% static 'user/images/courses/courses_big_2.jpg' %}" alt="" />
+        <h3>Information Technology</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail3"> <img src="{% static 'user/images/courses/courses_big_3.jpg' %}" alt="" />
+        <h3>Design</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail4"> <img src="{% static 'user/images/courses/courses_big_4.jpg' %}" alt="" />
+        <h3>Beauty & Health Care</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail5"> <img src="{% static 'user/images/courses/courses_big_1.jpg' %}" alt="" />
+        <h3>Multimedia</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_popular_courses_item_detail" id="courses_item_detail6"> <img src="{% static 'user/images/courses/courses_big_2.jpg' %}" alt="" />
+        <h3>Information Technology</h3>
+        <p>Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa, malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna, mollis ultrices lacus. </p>
+        <a href="course-detail-list-view.html" class="btn btn-default">Read More</a>
+        <div class="lms_social">
+          <h4>Share This Course</h4>
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Our Popular Courses end--> 
+  
+  <!--Our Top Experts Team start-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Our Top Experts Team </h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_experts_team_image" id="lms_experts_team_image11"> <img class="img-responsive" src="{% static 'user/images/team/experts_team1.png' %}" alt="Experts Team" /> </div>
+      <div class="lms_experts_team_image" id="lms_experts_team_image22"> <img class="img-responsive" src="{% static 'user/images/team/experts_team2.png' %}" alt="Experts Team" /> </div>
+      <div class="lms_experts_team_image" id="lms_experts_team_image33"> <img class="img-responsive" src="{% static 'user/images/team/experts_team3.png' %}" alt="Experts Team" /> </div>
+      <div class="lms_experts_team_image" id="lms_experts_team_image44"> <img class="img-responsive" src="{% static 'user/images/team/experts_team1.png' %}" alt="Experts Team" /> </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="lms_experts_team_detail" id="lms_experts_team_detail11">
+        <a href="team-single.html"><h3>Olivia Liam</h3></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer modo metus. Praesent quis risus blandit, aliquam diam non, facilisis magna. Donec justo lacus, euismod ac varius vitae, motus. Nunc congue magna in enim ultrices mattis. Fusce ultricies justo a sapien condimentum, eu mollis augue porttitor. </p>
+        <div class="lms_social">
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_experts_team_detail" id="lms_experts_team_detail22">
+        <a href="team-single.html"><h3>Noaln jude</h3></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer modo metus. Praesent quis risus blandit, aliquam diam non, facilisis magna. Donec justo lacus, euismod ac varius vitae, motus. Nunc congue magna in enim ultrices mattis. Fusce ultricies justo a sapien condimentum, eu mollis augue porttitor. </p>
+        <div class="lms_social">
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_experts_team_detail" id="lms_experts_team_detail33">
+        <a href="team-single.html"><h3>Facilisis Magna</h3></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer modo metus. Praesent quis risus blandit, aliquam diam non, facilisis magna. Donec justo lacus, euismod ac varius vitae, motus. Nunc congue magna in enim ultrices mattis. Fusce ultricies justo a sapien condimentum, eu mollis augue porttitor. </p>
+        <div class="lms_social">
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_experts_team_detail" id="lms_experts_team_detail44">
+        <a href="team-single.html"><h3>Ultrices</h3></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer modo metus. Praesent quis risus blandit, aliquam diam non, facilisis magna. Donec justo lacus, euismod ac varius vitae, motus. Nunc congue magna in enim ultrices mattis. Fusce ultricies justo a sapien condimentum, eu mollis augue porttitor. </p>
+        <div class="lms_social">
+          <ul>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lms_experts_team">
+        <div id="lms_experts_team_slider" class="owl-carousel owl-theme">
+          <div class="lms_experts_team_slider_item">
+            <div class="lms_hover_section"> <img src="{% static 'user/images/team/experts_team1_smaill.jpg' %}" alt="" />
+              <div class="lms_hover_overlay"><a id="11" class="lms_image_link"></a></div>
+            </div>
+            <h3>Olivia Liam</h3>
+          </div>
+          <div class="lms_experts_team_slider_item">
+            <div class="lms_hover_section"> <img src="{% static 'user/images/team/experts_team2_smaill.jpg' %}" alt="" />
+              <div class="lms_hover_overlay"><a id="22" class="lms_image_link"></a></div>
+            </div>
+            <h3>Noaln jude</h3>
+          </div>
+          <div class="lms_experts_team_slider_item">
+            <div class="lms_hover_section"> <img src="{% static 'user/images/team/experts_team3_smaill.jpg' %}" alt="" />
+              <div class="lms_hover_overlay"><a id="33" class="lms_image_link"></a></div>
+            </div>
+            <h3>Facilisis Magna</h3>
+          </div>
+          <div class="lms_experts_team_slider_item">
+            <div class="lms_hover_section"> <img src="{% static 'user/images/team/experts_team1_smaill.jpg' %}" alt="" />
+              <div class="lms_hover_overlay"><a id="44" class="lms_image_link"></a></div>
+            </div>
+            <h3>Ultrices</h3>
+          </div>
+        </div>
+        <div class="customNavigation"> <a class="lms_prev_next prev"><i class="fa fa-angle-left"></i></a> <a class="lms_prev_next next"><i class="fa fa-angle-right"></i></a> <a class="lms_prev_next">+</a> </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Our Top Experts Team end--> 
+  
+  <!--View & Learn start-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">View & Learn</h2>
+        </div>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_view_learn">
+        <div class="lms_view_learn_tab">
+          <ul>
+            <li><a href="#tab1">Videos</a></li>
+            <li><a href="#tab2">Revision Notes</a></li>
+          </ul>
+        </div>
+        <div id="tab1" class="lms_view_learn_tab_content">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <div class="lms_video_player">
+        <video id="lms_video_player_youtube" poster="{% static 'user/images/video/video_single_thumb.jpg' %}"> 
+          <!-- Pseudo HTML5 -->
+          <source type="video/youtube" src="http://www.youtube.com/watch?v=nOEw9iiopwI" />
+        </video>
+      </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="lms_video_list">
+                <div class="lms_video">
+                  <div class="lms_hover_section"> <img src="{% static 'user/images/video/thumb1.jpg' %}" alt="">
+                    <div class="lms_hover_overlay"><a href="{% static 'user/course-video.html' %}" class="lms_image_link_play"></a></div>
+                  </div>
+                  <h4>Multi Media Units</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="lms_video">
+                  <div class="lms_hover_section"> <img src="{% static 'user/images/video/thumb2.jpg' %}" alt="">
+                    <div class="lms_hover_overlay"><a href="{% static 'user/course-video.html' %}" class="lms_image_link_play"></a></div>
+                  </div>
+                  <h4>Multi Media Units</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="lms_video">
+                  <div class="lms_hover_section"> <img src="{% static 'user/images/video/thumb1.jpg' %}" alt="">
+                    <div class="lms_hover_overlay"><a href="{% static 'user/course-video.html' %}" class="lms_image_link_play"></a></div>
+                  </div>
+                  <h4>Multi Media Units</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tab2" class="lms_view_learn_tab_content">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="lms_cource_grid"> <img src="{% static 'user/images/courses/cource1.jpg' %}" alt="" /> <a href="course-gallery.html">
+                <h3>Multimedia</h3>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharetra sagittis. Pellentesque fringilla li at risus accumsan commodo. Integer suscipit eros sed eros vestibulum ornare nec ac tor.</p>
+                <div class="lms_entry_meta"> <span><a href="#"><i class="fa fa-calendar"></i> 30 May 2018</a></span> <span><a href="#"><i class="fa fa-eye"></i> 400</a></span> <span><a href="#"><i class="fa fa-heart"></i> 350</a></span> </div>
+                <a href="course-gallery.html" class="btn btn-default">View More</a> </div>
+              <div class="lms_cource_grid"> <img src="{% static 'user/images/courses/cource2.jpg' %}" alt="" /> <a href="course-gallery.html">
+                <h3>Biology & Life Sciences</h3>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharetra sagittis. Pellentesque fringilla li at risus accumsan commodo. Integer suscipit eros sed eros vestibulum ornare nec ac tor.</p>
+                <div class="lms_entry_meta"> <span><a href="#"><i class="fa fa-calendar"></i> 30 May 2018</a></span> <span><a href="#"><i class="fa fa-eye"></i> 400</a></span> <span><a href="#"><i class="fa fa-heart"></i> 350</a></span> </div>
+                <a href="course-gallery.html" class="btn btn-default">View More</a> </div>
+              <div class="lms_cource_grid"> <img src="{% static 'user/images/courses/cource3.jpg' %}" alt="" /> <a href="course-gallery.html">
+                <h3>Economics & Finance</h3>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharetra sagittis. Pellentesque fringilla li at risus accumsan commodo. Integer suscipit eros sed eros vestibulum ornare nec ac tor.</p>
+                <div class="lms_entry_meta"> <span><a href="#"><i class="fa fa-calendar"></i> 30 May 2018</a></span> <span><a href="#"><i class="fa fa-eye"></i> 400</a></span> <span><a href="#"><i class="fa fa-heart"></i> 350</a></span> </div>
+                <a href="course-gallery.html" class="btn btn-default">View More</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--View & Learn end--> 
+  
+</div>
+<div class="container-fluid"> 
+  <!--Testimonials start-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Testimonials</h2>
+        </div>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="lms_testimonials_bg" data-stellar-background-ratio="0.5">
+      <div class="lms_testimonials_bg2">
+        <div class="container">
+          <div class="lms_testimonials wow bounce">
+            <div id="lms_testimonials_slider" class="owl-carousel owl-theme">
+              <div class="lms_testimonials_slider_item">
+                <p class="lms_testimonial_quote">"</p>
+                <p class="lms_testimonials_txt">Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa,
+                  malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna,</p>
+                <img src="{% static 'user/images/testimonial/testimonial1.png' %}" alt="Testimonials" />
+                <h4>Olivia Liam</h4>
+              </div>
+              <div class="lms_testimonials_slider_item">
+                <p class="lms_testimonial_quote">"</p>
+                <p class="lms_testimonials_txt">Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa,
+                  malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna,</p>
+                <img src="{% static 'user/images/testimonial/testimonial2.jpg' %}" alt="Testimonials" />
+                <h4>Noaln jude</h4>
+              </div>
+              <div class="lms_testimonials_slider_item">
+                <p class="lms_testimonial_quote">"</p>
+                <p class="lms_testimonials_txt">Suspendisse posuere consectetur sodales. Etiam faucibus rhoncus nunc et pretium. Praesent tortor massa,
+                  malesuada sed ornare in, dignissim adipiscing felis. Donec eget hendrerit magna,</p>
+                <img src="{% static 'user/images/testimonial/testimonial1.png' %}" alt="Testimonials" />
+                <h4>Olivia Liam</h4>
+              </div>
+            </div>
+            <div class="customNavigation"> <a class="lms_prev_next prev"><i class="fa fa-angle-left"></i></a> <a class="lms_prev_next next"><i class="fa fa-angle-right"></i></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Testimonials end--> 
+</div>
+
+<!--Our Partners start-->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Our Partners</h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="lms_our_partner">
+        <div id="lms_our_partner_slider" class="owl-carousel owl-theme">
+          <div class="lms_our_partner_slider_item">
+            <div class="lms_our_partner_item"> <img src="{% static 'user/images/partner/partner1.png' %}" alt="partner" />
+              <hr/>
+              <p class="quote">"</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Integer et commodo metus. Praesent quis risus
+                blandit, aliquam diam non, facilisis magna. </p>
+              <p class="quote">"</p>
+            </div>
+          </div>
+          <div class="lms_our_partner_slider_item">
+            <div class="lms_our_partner_item"> <img src="{% static 'user/images/partner/partner2.png' %}" alt="partner" />
+              <hr/>
+              <p class="quote">"</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Integer et commodo metus. Praesent quis risus
+                blandit, aliquam diam non, facilisis magna. </p>
+              <p class="quote">"</p>
+            </div>
+          </div>
+          <div class="lms_our_partner_slider_item">
+            <div class="lms_our_partner_item"> <img src="{% static 'user/images/partner/partner3.png' %}" alt="partner" />
+              <hr/>
+              <p class="quote">"</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Integer et commodo metus. Praesent quis risus
+                blandit, aliquam diam non, facilisis magna. </p>
+              <p class="quote">"</p>
+            </div>
+          </div>
+          <div class="lms_our_partner_slider_item">
+            <div class="lms_our_partner_item"> <img src="{% static 'user/images/partner/partner1.png' %}" alt="partner" />
+              <hr/>
+              <p class="quote">"</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Integer et commodo metus. Praesent quis risus
+                blandit, aliquam diam non, facilisis magna. </p>
+              <p class="quote">"</p>
+            </div>
+          </div>
+        </div>
+        <div class="customNavigation"> <a class="lms_prev_next prev"><i class="fa fa-angle-left"></i></a> <a class="lms_prev_next next"><i class="fa fa-angle-right"></i></a> </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--Our Partners end-->
+<footer id="lms_footer">
+	{% include 'footer.html' %}
+</footer>
+</body>
+<!-- Body End -->
+</html>

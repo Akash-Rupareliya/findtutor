@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<title>Find Tutor</title>
+</head>
+<!-- Header End -->
+
+<!-- Body Start -->
+<body>
+<!-- page title Start -->
+<div class="lms_page_title">
+  <div class="lms_page_title_bg" data-stellar-background-ratio="0.5"></div>
+  <div class="lms_page_title_bg_overlay">
+    <div class="container">
+      <div class="lms_title">Registration Tutor</div>
+      <div class="pull-right">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'user_index' %}">Home</a></li>
+          <li class="active">Registration Tutor</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page title end --> 
+<!--Header start-->
+<header id="lms_header">
+  <div class="container">
+    <h1 class="logo"> <a href="index.html"> <img alt="Porto" width="184" height="80" data-sticky-width="82" data-sticky-height="40" src="{% static 'user/images/find_tutor.png' %}"> </a> </h1>
+    <button class="lms_menu_toggle btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse"><i class="fa fa-bars"></i> </button>
+  </div>
+  <!-- <div class="navbar-collapse nav-main-collapse collapse">
+    <div class="container">
+      <nav class="nav-main mega-menu">
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li><a href="{% url 'user_index' %}">Home</a></li>
+            <li ><a href="/about">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            {% if request.session.email is not None %}
+            {% if request.session.type == "student" %}
+            <li class="active"><a  href="#"><i class="icon-power" title="question"></i>Question</a></li> 
+            <li><a  href="#"><i class="icon-power" title="find"></i>Find</a></li> 
+            {% else %}
+            <li><a  href="#"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% endif %}
+            
+            <li><a  href="{% url 'user_logout' %}"><i class="icon-power" title="Log Out"></i>{{request.session.user_name}}  </a></li> 
+          {% else %}        
+          
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li> <a class="dropdown-toggle" href="{% url 'registration' %}">Registration</a></li>
+          {% endif %} 
+        </ul>
+      </nav>
+      <div class="lms_search_toggle"><a><i class="fa fa-search"></i></a></div>
+      <div class="lms_search_wrapper"><input type="search" placeholder="Search..." /></div>
+    </div>
+  </div> -->
+</header>
+<!--Header end--> 
+
+<!--main container start-->
+<div class="container">
+  
+  <div class="row">
+  	<div class="col-lg-12">
+    	<h2>Register with <span class="lms_label">Find Tutor</span> and share your <span class="lms_label">Experience</span>...!</h2>
+    </div>
+  	<div class="col-lg-3 col-md-3">
+         
+        </div>
+       <div class="col-lg-7 col-md-7">
+       		<div class="lms_register_window lms_register_light">
+            <h3>Tutor account</h3>
+            <div class="lms_register_body">
+              <form role="form" method="POST" action="{% url 'registration_tutor' %}" enctype="multipart/form-data">
+                {% block content %}
+                {% csrf_token %}
+                {% endblock %}
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6">
+                    <label for="tutor_fname">Enter First Name</label>
+                    <input type="text" class="form-control" id="tutor_fname" name="tutor_fname" placeholder="Enter First Name" required>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                    <label for="tutor_lname">Enter Last Name</label>
+                    <input type="text" class="form-control" id="tutor_lname" name="tutor_lname" placeholder="Enter Last Name" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tutor_dob">Date of Birth</label>
+                      <input type="date" name="tutor_dob" class="form-control" id="inputlevel" placeholder="dob" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="tutor_qualification">Qualification</label>
+                        <input type="text" name="tutor_qualification" class="form-control" id="tutor_qualification" placeholder="Enter Qualification" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12">
+                        <div class="form-group">
+                          <label for="tutor_experience">Experience</label>
+                          <input type="number" min="0" name="tutor_experience" class="form-control" id="tutor_experience" placeholder="Enter Experience" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <label for="tutor_aboutme">About Me</label>
+                            <input type="text" name="tutor_aboutme" class="form-control" id="tutor_aboutme" placeholder="Enter About Me" required>
+                          </div>
+                        </div>
+                      </div>
+                  
+                  <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tutor_gender">Gender</label>
+                        <input type="radio" id="tutor_gender" name="tutor_gender" placeholder="gender" value="male">Male
+                        <input type="radio" id="tutor_gender" name="tutor_gender" placeholder="gender" value="female">Female
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tutor_propic">Profile Picture</label>
+                      <input type="file" class="form-control" name="tutor_propic" id="tutor_propic" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="city">City</label>
+                      <select class="form-control" name="tutor_city_id">
+                        {% for c in city %}
+                        <option value="{{c.city_id}}">{{ c.city_name }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="state">State</label>
+                      <select class="form-control" name="tutor_state_id">
+                        {% block state %}
+                        {% for s in states %}
+                        <option value="{{s.state_id}}">{{ s.state_name }}</option>
+                        <!-- <option value="Gujarat">Gujarat</option>
+                        <option value="Maharashtra">Maharashtra</option> -->
+                        {% endfor %}
+                        {% endblock %}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="subjects">Subject</label>
+                      <select class="form-control" name="tutor_sub_id">
+                        {% block subject %}
+                        {% for s in subject %}
+                        <p>{{s.sub_name}}</p>
+                        <option value="{{s.sub_id}}">{{ s.sub_name }}</option>
+                        {% endfor %}
+                        {% endblock %}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tutor_mnum">Mobile Number</label>
+                      <input type="tel" name="tutor_mnum" maxlength="10" class="form-control" id="tutor_mnum" placeholder="Enter Mobile Number" required>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <!-- <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tutor_email">E-mail address</label>
+                      <input type="email" name="tutor_email" class="form-control" required id="tutor_email" placeholder="Enter email">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-12 col-md-0">
+                    <label for="signup_pass">Password</label>
+                    <input type="password" name="tutor_pass" class="form-control" id="signup_pass" placeholder="Password" required>
+                  </div> -->
+                  <!-- <div class="form-group col-lg-6 col-md-6">
+                    <label for="signup_repass">Re-enter Password</label>
+                    <input type="password" name="retype_pass" class="form-control" id="signup_repass" placeholder="Password">
+                  </div> -->
+                  <!-- <div class="col-lg-12">
+                  	<div class="checkbox">
+                  <label>
+                    <input type="checkbox">
+                    Remember Me </label>
+                </div>
+                  </div> -->
+                  
+                </div>
+                
+                <button type="submit" class="btn btn-default">Create Account</button>
+              </form>
+            </div>
+          </div>
+       </div> 
+        
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Have Any Qustion And Suggestion?</h2>
+        </div>
+        <!-- <p>Duis tortor lacus, dictum nec augue a, euismod sagittis eros. Aliquam id ligula.</p> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<form role="form">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="suggestion_name" placeholder="Your Full Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="suggestion_email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="suggestion_no" placeholder="Your Number">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group">
+              <textarea rows="7" class="form-control" id="suggestion_msg" placeholder="Your Message / Suggestion.."></textarea>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <button type="submit" class="btn btn-default pull-right">Send</button>
+          </div>
+        </form>
+  </div>
+  
+  
+  
+  
+</div>
+
+<!--main container end-->
+
+<footer id="lms_footer">
+	{% include 'footer.html' %}
+</footer>
+
+</body>
+<!-- Body End -->
+
+<!-- Mirrored from kamleshyadav.com/lms/login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 09:51:57 GMT -->
+</html>

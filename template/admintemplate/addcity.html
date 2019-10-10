@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+    <html>
+    
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+    
+      <header class="main-header">
+        {% block header %}
+        {% include "admintemplate/header.html" with username=username %}
+        {% endblock %}
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- /.sidebar -->
+        {% block sidebar %}
+        {% include "admintemplate/sidebar.html"  %}
+        {% endblock %}
+      </aside>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Add City
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{% url 'admin_index' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">City</li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add City</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="POST" action="{% url 'addcity' %}">
+              {% csrf_token %}
+              <div class="box-body">
+                <div class="form-group col-md-6">
+                  <label for="Package Name">City Name</label>
+                  <input type="text" class="form-control" name="cityname" id="exampleInputEmail1" placeholder="Enter City Name">
+                </div>
+                <div class="clearfix"> </div>
+                <div class="form-group col-md-4">
+                  <label for="states">State</label>
+                  
+                  <select class="form-control" name="state_id">
+                       {% block state %}
+                        {% for s in states %}
+                        <option value="{{s.state_id}}">{{ s.state_name }}</option> 
+                      
+                         {% endfor %}
+                        {% endblock %}    
+                    
+                    
+                    
+                    
+                    <!-- <option value="Gujarat">Gujarat</option>
+                        <option value="Maharashtra">Maharashtra</option> 
+                       -->
+                      </select>
+                </div>
+                
+                <div class="clearfix"> </div>
+               <div class="form-group col-md-6">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="clear" class="btn btn-danger">Clear</button>
+                </div>
+               
+                
+                <div class="clearfix"> </div>
+                {{city}}
+             </form>
+             </div>
+        </section>
+       </div>
+       
+    <footer class="main-footer">
+        {% block footer %}
+        {% include "admintemplate/footer.html" %}
+        {% endblock footer %}
+    </footer>
+     </div>
+   </body>
+</html>

@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+
+<head>
+    <style>
+        .button {
+          background-color: #4CAF50;
+          /* Green */
+          border: none;
+          color: white;
+          padding: 8px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          border-radius: 8px;
+          -webkit-transition-duration: 0.4s;
+          /* Safari */
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+    
+        .button1 {
+          background-color: green;
+          color: black;
+          border: 2px solid white;
+        }
+    
+        .button1:hover {
+          background-color: white;
+          color: green;
+          border: 2px solid green;
+        }
+    
+        .button2 {
+          background-color: red;
+          color: black;
+          border: 2px solid white;
+        }
+    
+        .button2:hover {
+          background-color: white;
+          color: red;
+          border: 2px solid red;
+        }
+      </style>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
+<link rel="icon" type="image/ico" href="{% static 'favicon.ico' %}" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<title>Find Tutor - Article Details</title>
+</head>
+<!-- Header End -->
+
+<!-- Body Start -->
+<body>
+<!-- page title Start -->
+<div class="lms_page_title">
+  <div class="lms_page_title_bg" data-stellar-background-ratio="0.5"></div>
+  <div class="lms_page_title_bg_overlay">
+   <div class="container"> 
+    
+    <div class="lms_title">Article Detail</div>
+    <div class="pull-right">
+      <ol class="breadcrumb">
+        <li><a href="{% url 'user_index' %}">Home</a></li>
+        <li class="active">Article Detail</li>
+      </ol>
+    </div>
+    
+   </div>
+  </div>
+</div>
+<!-- page title end -->
+<!--Header start-->  
+<header id="lms_header">
+  <div class="container">
+    <h1 class="logo"> <a href="{% url 'user_index' %}"> <img alt="Porto" width="184" height="80" data-sticky-width="82" data-sticky-height="40" src="{% static 'user/images/find_tutor.png' %}"> </a> </h1>
+    <button class="lms_menu_toggle btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse"><i class="fa fa-bars"></i> </button>
+  </div>
+  <div class="navbar-collapse nav-main-collapse collapse">
+    <div class="container">
+      <nav class="nav-main mega-menu">
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li><a href="{% url 'user_index' %}">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            {% if request.session.email is not None %}
+            <li>
+              <a href="{% url 'editprofile' %}">Edit Profile</a>
+          </li>
+          <li class="active"><a  href="{% url 'article' %}"><i class="icon-power" title="article"></i>Article</a></li> 
+            {% if request.session.type == "student" %}
+            <li ><a  href="{% url 'question' %}"><i class="icon-power" title="question"></i>Question</a></li> 
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            <!-- <li><a  href="#"><i class="icon-power" title="find"></i>Find</a></li>  -->
+            {% else %}
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% endif %}
+            
+            <li><a  href="{% url 'user_logout' %}"><i class="icon-power" title="Log Out"></i>Logout</a></li> 
+          {% else %}        
+          
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li> <a class="dropdown-toggle" href="{% url 'registration' %}">Registration</a></li>
+          {% endif %} 
+         
+        </ul>    
+      </nav>
+      <div class="lms_search_toggle"><a><i class="fa fa-search"></i></a></div>
+      <div class="lms_search_wrapper"><input type="search" placeholder="Search..." /></div>
+    </div>
+  </div>
+</header>
+<!--Header end-->  
+<div class="container">
+  <form method="post" action="{% url 'article' %}" enctype="multipart/form-data">  
+    {% block content %}
+    {% csrf_token %}
+    
+    
+  <div class="row">
+    
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="lms_title_center">
+          <div class="lms_heading_1">
+            <h2 class="lms_heading_title">Find Tutor - Article {% if request.session.type == "tutor" %} Upload {% endif %}</h2>
+          </div>
+          <!-- <p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales mauris et, ultrices tique odio.</p> -->
+        </div>
+      </div>
+    </div>
+ {% if request.session.type == 'tutor' %}   
+ <div class="row">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- Main content -->
+        <input type="hidden" name='art_user_id' value="{{request.session.user_id}}">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+            
+              <div class="form-group">
+                <label for="art_title">Artical Title</label>
+                <input type="text" name="art_title" class="form-control" id="art_title" placeholder="Enter Article Title" required>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="art_desc">Artical Description</label>
+                <textarea rows="10" class="form-control" id="art_desc" name='art_desc' placeholder="Write Article Description..." required></textarea>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <button id="submit" class="btn btn-default pull-right" name="submit">Submit</button>
+          </div>
+        </div>
+        </div>
+</div>
+    {% endif %}
+        <!-- <input type="file" name="mat_doc"> -->
+        
+      <!-- <button type="submit">Upload</button> -->
+
+
+{% if request.session.type == "student" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Article Details</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <!--blog categories start-->
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="lms_blog_single">
+           <!-- {{article.art_title}} -->
+            <h3>{{article.art_title}}</h3>
+            <div class="lms_entry_meta">
+             <span><a href="#"><i class="fa fa-calendar"></i> {{article.art_create_at}}</a></span>
+             <span><a href="#"><i class="fa fa-heart"></i> 350</a></span>
+             <span><a href="#"><i class="fa fa-user"></i> {{article.art_user_id}}</a></span> </div>
+            <p>
+            {{article.art_desc}}
+            </p>
+          </div>
+          <div class="lms_single_comment">
+              <h3>Comments</h3>
+                <!-- @foreach ($articles_comments as $articles_comment) -->
+                {% for a in art_cmt %}
+                  <div class="lms_comment">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="comment_icon"> <img src="{% static 'user/images/comment/comment_user1.png' %}" alt="comment" />
+                      <h3>{{a.artxcmt_user_id}}</h3>
+                      
+                    </div>
+                    <p>{{a.artxcmt_cmt}}</p>
+                </div>
+              </div>
+              <div class="clearfix"></div>  
+              {%endfor%}
+            </div>
+          
+          </div>
+         
+   </div>
+ </div>
+</div>
+</div>
+
+{% endif %}
+  </div>    
+
+<!--main container start-->
+
+<footer id="lms_footer">
+	{% include 'footer.html' %}
+</footer>
+</form>
+{% endblock %}
+</body>
+<!-- Body End -->
+
+<!-- Mirrored from kamleshyadav.com/lms/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 09:48:31 GMT -->
+</html>

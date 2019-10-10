@@ -1,0 +1,90 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+<link rel="icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome ' %}-->
+  <link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'plugins/iCheck/square/blue.css' %}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+<title>Find Tutor</title>
+</head>
+  <!--Header start-->
+  <header id="lms_header">
+    <div class="container">
+      <h1 class="logo"> <a href="{% url 'user_index' %}"> <img alt="Porto" width="184" height="80" data-sticky-width="82" data-sticky-height="40" src="{% static 'user/images/find_tutor.png' %}"> </a> </h1>
+      <button class="lms_menu_toggle btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse"><i class="fa fa-bars"></i> </button>
+    </div>
+    <div class="navbar-collapse nav-main-collapse collapse">
+      <div class="container">
+        <nav class="nav-main mega-menu">
+          <ul class="nav nav-pills nav-main" id="mainMenu">
+  
+  
+            <li class="active"><a href="{% url 'user_index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <!-- <li><a href="{% url 'article' %}">Article</a></li> -->
+            
+            {% if request.session.email is not None %}
+            <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
+            <li><a  href="{% url 'article' %}"><i class="icon-power" title="article"></i>Article</a></li> 
+            {% if request.session.type == "student" %}
+            <li><a  href="{% url 'question' %}"><i class="icon-power" title="question"></i>Question</a></li> 
+            <!-- <li><a  href="{% url 'find' %}"><i class="icon-power" title="find"></i>Find</a></li>  -->
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% else %}
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% endif %}
+            
+            <li><a  href="{% url 'user_logout' %}"><i class="icon-power" title="Log Out"></i>Logout </a></li> 
+          {% else %}        
+          
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li> <a class="dropdown-toggle" href="{% url 'registration' %}">Registration</a></li>
+          {% endif %} 
+                       
+          </ul>
+        </nav>
+        <div class="lms_search_toggle"><a><i class="fa fa-search"></i></a></div>
+        <div class="lms_search_wrapper"><input type="search" placeholder="Search..." /></div>
+      </div>
+    </div>
+  </header>
+  <!--Header end-->
+  {% endblock %}
+  

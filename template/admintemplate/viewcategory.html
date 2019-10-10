@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+    .button {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      border-radius: 8px;
+      -webkit-transition-duration: 0.4s;
+      /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: green;
+      color: black;
+      border: 2px solid white;
+    }
+
+    .button1:hover {
+      background-color: white;
+      color: green;
+      border: 2px solid green;
+    }
+
+    .button2 {
+      background-color: red;
+      color: black;
+      border: 2px solid white;
+    }
+
+    .button2:hover {
+      background-color: white;
+      color: red;
+      border: 2px solid red;
+    }
+  </style>
+
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header">
+      {% block content %}
+      {% include "admintemplate/header.html" with username=username %}
+      {% endblock %}
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- /.sidebar -->
+      {% block sidebar %}
+      {% include "admintemplate/sidebar.html"  %}
+      {% endblock %}
+    </aside>
+    
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          View Category
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="{% url 'admin_index' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">View Category</li>
+        </ol>
+      </section>
+    <!-- Main content -->
+      <section class="content">
+        <div class="box">
+          <div class="box-header">
+            <!-- <h3 class="box-title">Data Table With Full Features</h3> -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Category Id</th>
+                  <th>Category Name</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {% for s in category %}   
+                <tr>
+                    <td>{{s.cat_id}}</td>
+                  <td>{{s.cat_name}}</td>
+                  <!-- <td>{{user.user_email}}</td>
+                  <td>{{user.user_pass}}</td>
+                  <td>{{user.user_type}}</td>
+                  <td><a href="/delete_user/{{user.user_id}}" class="button button2">Delete</a> -->
+                      <!-- <a href="/delete_user/{{user.user_id}}" class="button button1">Active</a> -->
+                  </td>
+
+                 </tr>
+            {%endfor%}
+              </tfoot>
+            </table>
+             
+            </div>
+    <!-- /.box-body -->
+        </div>
+
+  </section>
+  {% block body %}
+  <form method="POST" action="/upload_csv_category" enctype="multipart/form-data">
+    
+  <div class="clearfix"> </div>
+    
+                <div class="form-group col-md-6">
+                  {% csrf_token %}
+                  <input type="file" name='document'required>
+                  <p>upload</p>
+                  <button type="submit" class="btn btn-primary">Upload</button>
+                  <button type="clear" class="btn btn-danger">Clear</button>
+                </div>
+  </div>
+  <!-- Main Footer -->
+  <!-- <footer class="main-footer"> -->
+  
+    <!-- To the right -->
+      <!-- <div class="pull-right hidden-xs">
+        Anything you want -->
+     
+      <!-- Default to the left -->
+      <!-- <strong>Copyright &copy; 2019 <a href="#">Company</a>.</strong> All rights reserved.
+    </footer> -->
+  
+  
+<!--  <footer class="main-footer">
+  </footer>-->
+  <footer class="main-footer">
+      {% include "admintemplate/footer.html" %}
+  </footer>
+</div>
+</form>
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+
+<head>
+    <style>
+        .button {
+          background-color: #4CAF50;
+          /* Green */
+          border: none;
+          color: white;
+          padding: 8px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          border-radius: 8px;
+          -webkit-transition-duration: 0.4s;
+          /* Safari */
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+    
+        .button1 {
+          background-color: green;
+          color: black;
+          border: 2px solid white;
+        }
+    
+        .button1:hover {
+          background-color: white;
+          color: green;
+          border: 2px solid green;
+        }
+    
+        .button2 {
+          background-color: red;
+          color: black;
+          border: 2px solid white;
+        }
+    
+        .button2:hover {
+          background-color: white;
+          color: red;
+          border: 2px solid red;
+        }
+      </style>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
+<link rel="icon" type="image/ico" href="{% static 'favicon.ico' %}" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<title>Find Tutor - Question</title>
+</head>
+<!-- Header End -->
+
+<!-- Body Start -->
+<body>
+<!-- page title Start -->
+<div class="lms_page_title">
+  <div class="lms_page_title_bg" data-stellar-background-ratio="0.5"></div>
+  <div class="lms_page_title_bg_overlay">
+   <div class="container"> 
+    
+    <div class="lms_title">Question</div>
+    <div class="pull-right">
+      <ol class="breadcrumb">
+        <li><a href="{% url 'user_index' %}">Home</a></li>
+        <li class="active">Question</li>
+      </ol>
+    </div>
+    
+   </div>
+  </div>
+</div>
+<!-- page title end -->
+<!--Header start-->  
+<header id="lms_header">
+  <div class="container">
+    <h1 class="logo"> <a href="{% url 'user_index' %}"> <img alt="Porto" width="184" height="80" data-sticky-width="82" data-sticky-height="40" src="{% static 'user/images/find_tutor.png' %}"> </a> </h1>
+    <button class="lms_menu_toggle btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse"><i class="fa fa-bars"></i> </button>
+  </div>
+  <div class="navbar-collapse nav-main-collapse collapse">
+    <div class="container">
+      <nav class="nav-main mega-menu">
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li><a href="{% url 'user_index' %}">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            {% if request.session.email is not None %}
+            {% if request.session.type == "student" %}
+            <li><a  href="{% url 'question' %}"><i class="icon-power" title="question"></i>Question</a></li> 
+            <li class="active"><a  href="{% url 'find' %}"><i class="icon-power" title="find"></i>Find</a></li> 
+            {% else %}
+            <li><a  href="#"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% endif %}
+            
+            <li><a  href="{% url 'user_logout' %}"><i class="icon-power" title="Log Out"></i>{{request.session.user_name}}  </a></li> 
+          {% else %}        
+          
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li> <a class="dropdown-toggle" href="{% url 'registration' %}">Registration</a></li>
+          {% endif %} 
+         
+        </ul>    
+      </nav>
+      <div class="lms_search_toggle"><a><i class="fa fa-search"></i></a></div>
+      <div class="lms_search_wrapper"><input type="search" placeholder="Search..." /></div>
+    </div>
+  </div>
+</header>
+<!--Header end-->  
+
+<!--main container start-->
+<div class="container">
+    <form role="form" method="POST" action="{% url 'question' %}" enctype="multipart/form-data">
+      {% block content %}
+      {% csrf_token %}
+      {% endblock %}
+    
+      
+    <div class="row">
+      
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="lms_title_center">
+            <div class="lms_heading_1">
+              <h2 class="lms_heading_title">Find Tutor - Question</h2>
+            </div>
+            <!-- <p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales mauris et, ultrices tique odio.</p> -->
+          </div>
+        </div>
+      </div>
+      
+   <div class="row">
+      <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+          <!-- Main content -->
+          <section class="content">
+            <div class="box">
+              <div class="box-header">
+                <!-- <h3 class="box-title">Data Table With Full Features</h3> -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Category Id</th>
+                      <th>Category Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for u in users %}   
+                    <tr>
+                        <td>{{u.user_}}</td>
+                      <td>{{s.cat_name}}</td>
+                      <!-- <td>{{user.user_email}}</td>
+                      <td>{{user.user_pass}}</td>
+                      <td>{{user.user_type}}</td>
+                      <td><a href="/delete_user/{{user.user_id}}" class="button button2">Delete</a> -->
+                          <!-- <a href="/delete_user/{{user.user_id}}" class="button button1">Active</a> -->
+                      </td>
+    
+                     </tr>
+                {%endfor%}
+                  </tfoot>
+                </table>
+                 
+                </div>
+        <!-- /.box-body -->
+            </div>
+    
+      </section>
+      </div>    
+   	  <!-- <div class="col-lg-4 col-md-4 col-sm-4">
+      	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services1.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Learn Anything Online</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adDonec idiam dapibus, sodales odio quis, fgilla maurisorci. Nullam vel laoreet dui. Sed blandit quis sapien sed, </p>
+            </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-4 col-sm-4">
+      	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services2.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Talk to Our Expertse</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adDonec idiam dapibus, sodales odio quis, fgilla maurisorci. Nullam vel laoreet dui. Sed blandit quis sapien sed, </p>
+            </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-4 col-sm-4">
+      	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services3.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Communicate with People</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adDonec idiam dapibus, sodales odio quis, fgilla maurisorci. Nullam vel laoreet dui. Sed blandit quis sapien sed, </p>
+            </div>
+      </div> -->
+      <div class="lms_contact_form">
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <textarea rows="10" class="form-control" id="que_que" name='que_que' placeholder="Your Question..." required></textarea>
+              
+            </div>
+          </div>
+        </div>
+        <input type="hidden" class="form-control" id="que_user_id" value="{{request.session.user_id}}" name="que_user_id">
+        {{request.session.user_id}}
+        <div class="row">
+          <div class="col-lg-3">
+          </div>
+          <div class='col-lg-3'>
+              <!-- <a id="submit" class="btn btn-default pull-right" name='submit' href="{% url 'feedback' %}">Send</a>  -->
+            <button id="submit" class="btn btn-default pull-right" name="submit">send</button>
+            <p id="err"></p>
+          </div>
+        </div>
+      </div>
+
+   </div>   
+      
+   
+   <!--Our Recent Achievements start-->
+   <!-- <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="lms_title_center">
+            <div class="lms_heading_1">
+              <h2 class="lms_heading_title">Our Recent Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+   <div class="row">
+   	  <div class="col-lg-4 col-md-4 col-sm-4">
+      	  <div class="lms_recent_achievement">
+          	  <img src="{% static 'user/images/other/recent_achievement1.jpg' %}" alt="recent achievement" />
+              <h3>Suspendisse eget tortor </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharegittis.</p>
+          </div>	
+      </div>
+      
+      <div class="col-lg-4 col-md-4 col-sm-4">
+      	  <div class="lms_recent_achievement">
+          	  <img src="{% static 'user/images/other/recent_achievement2.jpg' %}" alt="recent achievement" />
+              <h3>Suspendisse eget tortor </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharegittis.</p>
+          </div>	
+      </div>
+      
+      <div class="col-lg-4 col-md-4 col-sm-4">
+      	  <div class="lms_recent_achievement">
+          	  <img src="{% static 'user/images/other/recent_achievement3.jpg' %}" alt="recent achievement" />
+              <h3>Suspendisse eget tortor </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue ac nisi pharegittis.</p>
+          </div>	
+      </div>
+   </div>  -->
+   <!--Our Recent Achievements end-->   
+   
+   
+   
+   
+      
+</div>  
+<!--main container end-->
+
+<div class="container-fluid">
+  <div class="row">	
+    <div class="lms_our_success">
+    	<div class="lms_our_success_bg" data-stellar-background-ratio="0.5">
+        <div class="lms_our_success_bg_overlay">
+        	<div class="container">
+               <!--Our Success in Numbers start-->
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class="lms_our_success_title wow fadeInDown">
+                   	  <h3>Our Success in Numbers</h3>
+                      <!-- <p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales mauris et,</p> -->
+                    </div>  
+                   </div> 
+               </div>
+               
+               <div class="row">
+               	<div class="col-lg-3 col-md-3 col-sm-3 wow fadeInLeft">
+                	<div class="lms_count">
+                    	<i class="fa fa-user"></i>
+                    	<div class="lms_progress_value count appear-count"  data-from="0" data-to="2848" data-speed="2000" data-refresh-interval="50"></div>
+                   <p class="lms_progess_label"> student </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3 wow fadeInDown">
+                	<div class="lms_count">
+                    	<i class="fa fa-book"></i>
+                    	<div class="lms_progress_value count appear-count"  data-from="0" data-to="1048" data-speed="2000" data-refresh-interval="50"></div>
+                   <p class="lms_progess_label"> courses </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3 wow fadeInDown">
+                	<div class="lms_count">
+                    	<i class="fa fa-male"></i>
+                    	<div class="lms_progress_value count appear-count"  data-from="0" data-to="2866" data-speed="2000" data-refresh-interval="50"></div>
+                   <p class="lms_progess_label"> visitor </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3 wow fadeInRight">
+                	<div class="lms_count">
+                    	<i class="fa fa-graduation-cap"></i>
+                    	<div class="lms_progress_value count appear-count"  data-from="0" data-to="1005" data-speed="2000" data-refresh-interval="50"></div>
+                   <p class="lms_progess_label"> experts </p>
+                    </div>
+                </div>
+               </div>
+               
+               <!--Our Success in Numbers end-->
+            </div>
+        </div>
+       </div> 
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-8 col-lg-offset-2">
+          <div class="lms_title_center">
+            <div class="lms_heading_1">
+              <h2 class="lms_heading_title">About our Organization</h2>
+            </div>
+            <p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales mauris cum ne periculis molestiae pri.</p>
+          </div>
+        </div>
+    </div>
+    
+    <div class="row">
+    	<div class="col-lg-6 col-md-6 col-sm-6">
+        	<h3>Who We Are</h3>
+            <p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. </p>
+            
+            <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Mauris posuere</a> </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body"> Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
+            
+            <ul class="lms_underlist_doted">
+            	<li>Animating the lower and upper body, arms, and legs</li>
+                <li>Adding weight</li>
+                <li>Adjusting timing and gait</li>
+            </ul>
+            
+
+
+            
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Aliquam et venenatis</a> </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Nulla nec tristique </a> </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+          </div>
+        </div>
+      </div>
+            
+            
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+        	<h3>Our Skills</h3>
+            <p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p> 
+<br/>
+<p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales mauris et, ultrices tristique odio. </p>
+            
+            
+            <div class="lms_flat_skills">
+            	<label>Photoshop</label>
+              <div class="progress">
+                <div class="progress-bar lms_skill_photoshop" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:90%;"> 90% </div>
+              </div>
+              <label>Illustrator</label>
+              <div class="progress">
+                <div class="progress-bar lms_skill_illustrator" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> 80% </div>
+              </div>
+              <label>HTML / CSS</label>
+              <div class="progress">
+                <div class="progress-bar lms_skill_html" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:90%;"> 90% </div>
+              </div>
+              <label>PHP / MYSQL</label>
+              <div class="progress">
+                <div class="progress-bar lms_skill_php" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:70%;"> 70% </div>
+              </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+
+
+<footer id="lms_footer">
+	{% include 'footer.html' %}
+</footer>
+</form>
+</body>
+<!-- Body End -->
+
+<!-- Mirrored from kamleshyadav.com/lms/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 09:48:31 GMT -->
+</html>

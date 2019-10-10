@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Header Start -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description"  content="Learning System HTML Template"/>
+<meta name="keywords" content="">
+<meta name="MobileOptimized" content="320">
+<!-- favicon links -->
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<!-- main css -->
+<link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+<title>Find Tutor - Contact Us</title>
+</head>
+<!-- Header End -->
+
+<!-- Body Start -->
+<body>
+<!-- page title Start -->
+<form action="{% url 'feedback' %}" enctype="multipart/form-data" method="POST">
+  {% block content %}
+  {% csrf_token %}
+  {% endblock %}
+  <div class="lms_page_title">
+  <div class="lms_page_title_bg" data-stellar-background-ratio="0.5"></div>
+  <div class="lms_page_title_bg_overlay">
+   <div class="container"> 
+    
+    <div class="lms_title">Contact us</div>
+    <div class="pull-right">
+      <ol class="breadcrumb">
+        <li><a href="{% url 'user_index' %}">Home</a></li>
+        <li class="active">Contact us</li>
+      </ol>
+    </div>
+    
+   </div>
+  </div>
+</div>
+<!-- page title end -->
+<!--Header start-->  
+<header id="lms_header">
+  <div class="container">
+    <h1 class="logo"> <a href="{% url 'user_index' %}"> <img alt="Porto" width="184" height="80" data-sticky-width="82" data-sticky-height="40" src="{% static 'user/images/find_tutor.png' %}"> </a> </h1>
+    <button class="lms_menu_toggle btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse"><i class="fa fa-bars"></i> </button>
+  </div>
+  <div class="navbar-collapse nav-main-collapse collapse">
+    <div class="container">
+      <nav class="nav-main mega-menu">
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li><a href="{% url 'user_index' %}">Home</a></li>
+            <li ><a href="/about">About</a></li>
+            <li class="active"><a href="/contact">Contact Us</a></li>
+            {% if request.session.email is not None %}
+            <li>
+              <a href="{% url 'editprofile' %}">Edit Profile</a>
+          </li>
+          <li><a  href="{% url 'article' %}"><i class="icon-power" title="article"></i>Article</a></li> 
+            {% if request.session.type == "student" %}
+            <li><a  href="{% url 'question' %}"><i class="icon-power" title="question"></i>Question</a></li> 
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            <!-- <li><a  href="{% url 'find' %}"><i class="icon-power" title="find"></i>Find</a></li>  -->
+            {% else %}
+            <li><a  href="{% url 'material' %}"><i class="icon-power" title="material"></i>Material</a></li> 
+            {% endif %}
+            
+            <li><a  href="{% url 'user_logout' %}"><i class="icon-power" title="Log Out"></i>Logout</a></li> 
+          {% else %}        
+          
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li> <a class="dropdown-toggle" href="{% url 'registration' %}">Registration</a></li>
+          {% endif %} 
+         
+        </ul>
+      </nav>
+      <div class="lms_search_toggle"><a><i class="fa fa-search"></i></a></div>
+      <div class="lms_search_wrapper"><input type="search" placeholder="Search..." /></div>
+    </div>
+  </div>
+</header>
+<!--Header end-->  
+
+<!--main container start-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Find Tutor - Get In Touch with Us !</h2>
+        </div>
+        <!-- <p>Duis tortor lacus, dictum nec augue a, euismod sagittis eros. Aliquam id ligula </p> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="lms_contact_detail">
+        <div class="lms_Contact_address">
+          <h3>Address :</h3>
+          <p>Sanand - Sarkhej Chowkdi, Ahmedabad, India </p>
+        </div>
+        <div class="lms_Contact_phone">
+          <h3>Phone no :</h3>
+          <p>+91 9099063417</p>
+          <p></p>
+        </div>
+        <div class="lms_Contact_fax">
+          <h3>Fax no :</h3>
+          <p>+00 1234 56789</p>
+          <p>+00 1234 56789</p>
+        </div>
+        <div class="lms_Contact_email">
+          <h3>Email Id :</h3>
+          <a href="mailTo:rupareliyaakash24.ar@gmail.com">rupareliyaakash24.ar@gmail.com</a> </div>
+        <div class="lms_Contact_social">
+          <h3>Connect With us :</h3>
+          <div class="lms_social">
+            <ul>
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google+"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8">
+      <div class="lms_map">
+        <div id="bigth_googleMap" style="width:100%;height:450px;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!--contact form start-->
+  <div class="lms_contact_form">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="form-group">
+          <input type="text" class="form-control" id="feedback_name" name='feedback_name' placeholder="Your Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="feedback_email" name="feedback_email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" minlength="10" maxlength="10" class="form-control" id="feedback_mnum" name="feedback_mnum" placeholder="Enter Mobile No." required>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="form-group">
+          <textarea rows="10" class="form-control" id="feedback_feedback" name='feedback_feedback' placeholder="Your Message..." required></textarea>
+        </div>
+      </div>
+      <div class="col-lg-12"> 
+        <!-- <a id="submit" class="btn btn-default pull-right" name='submit' href="{% url 'feedback' %}">Send</a>  -->
+        <button id="submit" class="btn btn-default pull-right" name="submit">send</button>
+        <p id="err"></p>
+      </div>
+    </div>
+  </div>
+  <!--contact form end-->
+
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="lms_title_center">
+        <div class="lms_heading_1">
+          <h2 class="lms_heading_title">Other services We have provide</h2>
+        </div>
+        <!-- <p>Aliquam et venenatis arcu, ac dictum felis. Nulla sapien dolor, tempor sodales </p> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="col-lg-4 col-md-4 col-sm-4">
+    	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services1.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Learn Anything Online</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris.</p>
+            </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services2.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Talk to Our Experts</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris.</p>
+            </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    	<div class="lms_service_3">
+            	<div class="lms_service_icon"><img src="{% static 'user/images/services/services3.png' %}" alt="service icon"></div>
+                <a href="#"><h3 class="lms_service_title">Communicate with People</h3></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscg elit. Donec id diam dapibus, sodales odio quis, fringilla mauris.</p>
+            </div>
+    </div>
+    
+  </div>
+  
+  
+</div>
+<!--main container end-->
+
+
+
+<footer id="lms_footer">
+	{% include 'footer.html' %}
+</footer>
+<!--main js file start--> 
+<script type="text/javascript" src="{% static 'user/js/jquery-1.11.1.js' %}"></script> 
+<!--plugin-->
+<script type="text/javascript" src="{% static 'user/js/plugin/appear/jquery.appear.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/count/jquery.countTo.js' %}"></script> 
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="{% static 'user/js/plugin/mediaelement/mediaelement-and-player.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/mixitup/jquery.mixitup.js' %}"></script>
+<script type="text/javascript" src="{% static 'user/js/plugin/modernizr/modernizr.custom.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/owl-carousel/owl.carousel.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/parallax/jquery.stellar.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/prettyphoto/js/jquery.prettyPhoto.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/revslider/js/jquery.themepunch.plugins.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/revslider/js/jquery.themepunch.revolution.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/plugin/single/single.js' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'user/js/plugin/wow/wow.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/grid-gallery.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/bootstrap.js' %}"></script> 
+<script type="text/javascript" src="{% static 'user/js/custom.js' %}"></script>
+<script type="text/javascript">
+	// google ROADMAP
+	var myCenter = new google.maps.LatLng(22.9601, 72.4866);
+	
+	function initialize() {
+		var mapProp = {
+			center: myCenter,
+			zoom: 7,
+			scrollwheel: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		
+		var map = new google.maps.Map(document.getElementById("bigth_googleMap"), mapProp);
+		
+		var icon = {
+			url: 'http://www.nashvillesmls.com/img/map/marker-school@2x.png'
+		};
+		
+		var marker = new google.maps.Marker({
+			position: myCenter,
+			map: map,
+			title: 'L. J. Campus',
+			icon: icon
+		});
+		
+		
+		var contentString = "<div class='lms_map_infowindow'><img src='../../hostingsites.co.in/february/lms/images/courses/courses_small_3.html'/><h3>Sanand - Sarkhej Chowkdi, Ahmedabad, India</h3> <p><a href='mailTo:ljinstitutes@gmail.com'>ljinstitutes@gmail.com</a></p></div>";
+		
+		marker.setMap(map);
+		var infowindow = new google.maps.InfoWindow({
+			content: contentString,
+			pixelOffset : 0,
+		});
+		
+		google.maps.event.addListener(marker, 'click', function () {
+			infowindow.open(map, marker);
+		});
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!--main js file end-->
+</form>
+</body>
+<!-- Body End -->
+</html>
