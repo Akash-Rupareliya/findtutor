@@ -1,0 +1,175 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from adminlte.io/themes/AdminLTE/pages/examples/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2018 07:58:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    
+    <meta name="description"  content="Learning System HTML Template"/>
+    <meta name="keywords" content="">
+    <meta name="MobileOptimized" content="320">
+    <!-- favicon links -->
+    <link rel="shortcut icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+    <link rel="icon" type="image/ico" href="{% static 'user/favicon.ico' %}" />
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'user/css/main.css' %}" media="screen"/>
+    <title>Find Tutor</title>
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Find Tutor | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  
+</head>
+<div class="lms_page_title">
+    <div class="lms_page_title_bg" data-stellar-background-ratio="0.5"></div>
+    <div class="lms_page_title_bg_overlay">
+      <div class="container">
+  
+        <div class="lms_title">Student</div>
+        <div class="pull-right">
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Student</li>
+          </ol>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="/"><b>Find</b>Tutor</a>
+  </div>
+  
+  
+
+  <div class="register-box-body">
+    <p class="login-box-msg">Register a new Student</p>
+    
+    <form method="post" action="{% url 'registration_student' %}">
+      {% csrf_token %}
+      <div class="form-group has-feedback">
+        <label for="stud_fname">First Name</label>
+        <input type="text" class="form-control" id="stud_fname" name="stud_fname" placeholder="Enter First Name" required>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="stud_lname">Last Name</label>
+        <input type="text" class="form-control" id="stud_lname" name="stud_lname" placeholder="Enter Last Name" required>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="gender">Gender</label>
+        <input type="radio" id="stud_gender" name="stud_gender" placeholder="gender" value="male">Male
+        <input type="radio" id="stud_gender" name="stud_gender" placeholder="gender" value="female">Female
+      </div>
+      <div class="form-group has-feedback">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="stud_dob" class="form-control" id="inputlevel" placeholder="dob" required>
+          <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="mobile_num">Mobile No.</label>
+          <input type="text" class="form-control" name="stud_mnum" placeholder="Enter Mobile No." required>
+        </div>
+      <div class="form-group has-feedback">
+        <label for="signup_email">Email</label>
+        <input type="email" name="stud_email" class="form-control" placeholder="Enter Email Address" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+          <label for="retype_password">Retype Password</label>
+        <input type="password" class="form-control" name="repassword" placeholder="Retype password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      
+      <div class="form-group has-feedback">
+        <label for="stud_propic">Profile Photo</label>
+        <input type="file" class="form-control" id="stud_propic" name="stud_propic">
+      </div>
+
+      <div class="form-group has-feedback">
+          <label for="city">City</label>
+        <select class="form-control" name="stud_city_id">
+          <option>Select City Name</option>
+          <option value="1">Junagadh</option>
+          <option value="2">Surat</option>
+          <option value="3">Ahmedabad</option>
+        </select>
+      </div>
+      <div class="form-group has-feedback">
+          <label for="state">State</label>
+        <select class="form-control" name="stud_state_id">
+          {% for state in state_obj %}
+            <option value="{{ state.state_name }}">{{ state.state_name }}</option>
+          {% endfor %}
+          
+        </select>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-8">
+          <!-- <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label>
+          </div>-->
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+<!--
+    <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
+        Facebook</a>
+      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
+        Google+</a>
+    </div>
+-->
+    <a href="#" class="text-center">I already have a membership</a>
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery 3 -->
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- iCheck -->
+<script src="{% static 'plugins/iCheck/icheck.min.js' %}"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+</body>
+
+</html>
+{% endblock %}
